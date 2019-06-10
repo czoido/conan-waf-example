@@ -1,0 +1,10 @@
+.lock-waf_win32_build
+env.py
+test.log
+waf
+.vscode
+__pycache__
+.waf*
+waf3*
+.lock*
+/build

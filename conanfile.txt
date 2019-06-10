@@ -1,0 +1,13 @@
+[requires]
+openpnp-capture/0.0.17@czoido/testing
+opencv/4.1.0@conan/stable
+glfw/3.2.1@bincrafters/stable
+glew/2.1.0@bincrafters/stable
+WafGen/0.1@czoido/testing
+
+[generators]
+Waf
+
+[imports]
+bin, *.dll -> . # Copies all dll files from the package "bin" folder to my project "bin" folder
+lib, *.dylib* -> . # Copies all dylib files from the package "lib" folder to my project "bin" folder
