@@ -11,15 +11,14 @@ class WafExampleConan(ConanFile):
         self.requires("glfw/3.2.1@bincrafters/stable")
         self.requires("glew/2.1.0@bincrafters/stable")
         self.requires("WafGen/0.1@czoido/testing")
-        self.requires("waf_installer/2.0.17@czoido/stable")
+        self.requires("waf_installer/2.0.17@czoido/testing")
 
     def build_requirements(self):
-        self.build_requires("waf_installer/2.0.17@czoido/stable")
+        self.build_requires("waf_installer/2.0.17@czoido/testing")
 
     def build(self):
-        self.run("python {}\waf configure --top={} --out={}".format(
-            self.deps_env_info["waf_installer"].waf_script_folder, self.source_folder, self.build_folder))
-        self.run("python {}\waf build".format(self.deps_env_info["waf_installer"].waf_script_folder))
+        self.run("waf configure")
+        self.run("waf build")
 
     def imports(self):
         self.copy("*.dll", dst="bin", src="bin")  # From bin to bin
