@@ -6,10 +6,7 @@ class WafExampleConan(ConanFile):
     generators = "Waf"
 
     def requirements(self):
-        self.requires("openpnp-capture/0.0.17@czoido/testing")
         self.requires("opencv/4.1.0@conan/stable")
-        self.requires("glfw/3.2.1@bincrafters/stable")
-        self.requires("glew/2.1.0@bincrafters/stable")
         self.requires("WafGen/0.1@czoido/testing")
         self.requires("waf_installer/2.0.17@czoido/testing")
 
